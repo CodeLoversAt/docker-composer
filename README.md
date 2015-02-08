@@ -61,18 +61,18 @@ This dockerfile creates a container with [Composer](https://getcomposer.org/) ru
 
 If you have created the alias from step 4, then it's just like normal:
 
-    ```bash
-    cd /path/to/project
-    composer install
-    ```
+```bash
+cd /path/to/project
+composer install
+```
     
 Otherwise use the path to `run_composer.sh`
 
 
-    ```bash
-    cd /path/to/project
-    ~/docker/run_composer.sh install
-    ```
+```bash
+cd /path/to/project
+~/docker/run_composer.sh install
+```
 
 ## How to use it on Mac OS X?
 
