@@ -4,6 +4,34 @@ This dockerfile creates a container with [Composer](https://getcomposer.org/) ru
 
 ## Installation
 
+### a) Use the prepared container
+
+1. load the container
+    
+    ```bash
+    docker pull codelovers/docker-hhvm-composer
+    ```
+    
+2. copy `run_composer.sh`
+
+    ```bash
+    wget -O ~/docker/run_composer.sh https://raw.githubusercontent.com/CodeLoversAt/docker-hhvm-composer/master/run_composer.sh
+    ```
+    
+3.  in `run_composer.sh` replace the container name in line 10 with `codelovers/docker-hhvm-composer`.
+
+    ```bash
+    docker run -ti -v `pwd`:/srv -v $HOME/.composer:/root/.composer codelovers/docker-hhvm-composer $params
+    ```
+   
+4. create an alias for conveniance
+
+    ```bash
+    alias "composer"="~/docker/run_composer.sh"
+    ```
+    
+### b) Build on your own
+
 1. clone this repo
 
     ```bash
