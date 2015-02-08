@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM ubuntu:14.04
 
 MAINTAINER Daniel Holzmann <daniel@codelovers.at>
 
@@ -7,8 +7,8 @@ ENV HOME /root
 RUN apt-get update -qq && apt-get install -y -qq git curl wget apt-utils
 
 # install HHVM
-RUN apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0x5a16e7281be7a449
-RUN echo deb http://dl.hhvm.com/debian wheezy main | tee /etc/apt/sources.list.d/hhvm.list
+RUN wget -O - http://dl.hhvm.com/conf/hhvm.gpg.key | apt-key add -
+RUN echo deb http://dl.hhvm.com/ubuntu trusty main | tee /etc/apt/sources.list.d/hhvm.list
 RUN apt-get update
 RUN apt-get install -y hhvm
 
