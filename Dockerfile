@@ -1,5 +1,7 @@
 FROM debian:wheezy
 
+MAINTAINER Daniel Holzmann <daniel@codelovers.at>
+
 ENV HOME /root
 
 RUN apt-get update -qq && apt-get install -y -qq git curl wget apt-utils
