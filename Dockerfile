@@ -1,4 +1,4 @@
-FROM codelovers/docker-hhvm
+FROM codelovers/hhvm
 
 MAINTAINER Daniel Holzmann <daniel@codelovers.at>
 

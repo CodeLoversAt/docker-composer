@@ -7,29 +7,29 @@ This dockerfile creates a container with [Composer](https://getcomposer.org/) ru
 ### a) Use the prepared container
 
 1. load the container
-    
+
     ```bash
     docker pull codelovers/docker-hhvm-composer
     ```
-    
+
 2. copy `run_composer.sh`
 
     ```bash
     wget -O ~/docker/run_composer.sh https://raw.githubusercontent.com/CodeLoversAt/docker-hhvm-composer/master/run_composer.sh
     ```
-    
-3.  in `run_composer.sh` replace the container name in line 10 with `codelovers/docker-hhvm-composer`.
+
+3.  in `run_composer.sh` replace the container name in line 4 with `codelovers/hhvm-composer`.
 
     ```bash
-    docker run -ti -v `pwd`:/srv -v $HOME/.composer:/root/.composer codelovers/docker-hhvm-composer $params
+    docker run -ti -v `pwd`:/srv -v $HOME/.composer:/root/.composer codelovers/hhvm-composer $@
     ```
-   
+
 4. create an alias for conveniance
 
     ```bash
     alias "composer"="~/docker/run_composer.sh"
     ```
-    
+
 ### b) Build on your own
 
 1. clone this repo
@@ -37,20 +37,20 @@ This dockerfile creates a container with [Composer](https://getcomposer.org/) ru
     ```bash
     git clone https://github.com/CodeLoversAt/docker-hhvm-composer.git
     ```
-    
+
 2. build the container
 
     ```bash
     cd docker-hhvm-composer
     docker build -t docker-composer .
     ```
-    
+
 3. put the `run_composer.sh` somewhere.
 
    ```bash
    cp run_composer.sh ~/docker
    ```
-   
+
 4. create an alias for conveniance
 
     ```bash
@@ -65,7 +65,7 @@ If you have created the alias from step 4, then it's just like normal:
 cd /path/to/project
 composer install
 ```
-    
+
 Otherwise use the path to `run_composer.sh`
 
 
